@@ -1,2 +1,2 @@
-# Whatsapp_chat
-Visualization of Whatsapp chat history
+# Whatsapp chat
+Repository for the visualization of Whatsapp chat history.
