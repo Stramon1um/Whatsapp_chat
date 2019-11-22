@@ -34,7 +34,7 @@ library(lubridate)
    6. Get the final plot!
 
 **Example**
-![Example](images/2019/11/Rplot11.png)
+
 
 **Creator**
 
