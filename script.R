@@ -32,13 +32,6 @@ dat$date <- as.Date(as.character(dat$date), format = "%d/%m/%Y") #oppure %y
 
 datebreaks <- seq(as.Date("2018-07-16"), as.Date("2019-11-22"), by="1 week")
 
-####
-#dat_2<-count(dat, c("date", "sender"))
-#ggplot(dat_2, aes(x=date), stat = "identity") + 
-#  geom_area(aes(y=freq, fill=sender)) +
-#    scale_x_date(breaks=datebreaks, labels=date_format("%d %b")) +
-#    scale_fill_brewer(palette="Set2")
-
 ########
 
 p1<-ggplot(dat, aes(x = date, fill = sender)) + geom_bar(stat="count") +
@@ -51,23 +44,7 @@ p1<-ggplot(dat, aes(x = date, fill = sender)) + geom_bar(stat="count") +
     axis.title.y = element_text(color="Black", size=14),
     axis.title.x = element_blank())+
   theme(axis.text.x = element_text(face = "bold", angle = 30, hjust = 1, size=9),
-        axis.text.y = element_text(face = "bold", hjust = 1, size=12)) +
-  geom_vline(xintercept = dat$date[3600], colour="#BB0000", linetype="dashed", size=.75) +
-  geom_vline(xintercept = dat$date[4912], colour="#BB0000", linetype="dashed", size=.75) +
-  geom_vline(xintercept = dat$date[9195], colour="#BB0000", linetype="dashed", size=.75) +
-  geom_vline(xintercept = dat$date[14492], colour="#BB0000", linetype="dashed", size=.75) +
-  geom_vline(xintercept = dat$date[15270], colour="#BB0000", linetype="dashed", size=.75) +
-  geom_vline(xintercept = dat$date[19940], colour="#BB0000", linetype="dashed", size=.75) +
-  geom_vline(xintercept = dat$date[22469], colour="#BB0000", linetype="dashed", size=.75) +
-  geom_vline(xintercept = dat$date[24670], colour="#BB0000", linetype="dashed", size=.75) +
-  #geom_text(data=dat, mapping=aes(x=dat$date[3600], y=270, label="First Date"), size=3, angle=90, vjust=1, hjust=0) +
-  #geom_text(data=dat, mapping=aes(x=dat$date[4912], y=270, label="Sara's Leaving"), size=3, angle=90, vjust=1, hjust=0) +
-  #geom_text(data=dat, mapping=aes(x=dat$date[9195], y=270, label="Mauro in London"), size=3, angle=90, vjust=1, hjust=0) +
-  #geom_text(data=dat, mapping=aes(x=dat$date[14492], y=270, label="Sara in Dundee"), size=3, angle=90, vjust=1, hjust=0) +
-  #geom_text(data=dat, mapping=aes(x=dat$date[15270], y=270, label="Sara's Leaving"), size=3, angle=90, vjust=1, hjust=0) +
-  #geom_text(data=dat, mapping=aes(x=dat$date[19940], y=270, label="Missing Parcel"), size=3, angle=90, vjust=1, hjust=0) +
-  #geom_text(data=dat, mapping=aes(x=dat$date[22469], y=270, label="Sara in Dundee"), size=3, angle=90, vjust=1, hjust=0) +
-  #geom_text(data=dat, mapping=aes(x=dat$date[24670], y=270, label="R problems"), size=3, angle=90, vjust=1, hjust=0) +
+        axis.text.y = element_text(face = "bold", hjust = 1, size=12))+
   theme(legend.position="none")
 
 p3<-ggplot(dat, aes(x = day, fill = sender)) + geom_bar(stat="count", position = 'dodge') +
@@ -208,29 +185,3 @@ lay <- rbind(c(1,1,4),
 grid.arrange(p1, p2, p3, p4, p5, layout_matrix = lay, 
              top = textGrob("Whatsapp messages between Sara & Mauro",gp=gpar(fontsize=22,font=2)))
 dev.off()
-
-#pushViewport(viewport(layout = grid.layout(2, 2)))
-#vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
-#print(p1, vp = vplayout(1, 1:2))
-#print(p2, vp = vplayout(2, 1))
-#print(p3, vp = vplayout(2, 2))
-
-
-
-
-
-
-
-ggplot(dat, aes(x = hour, fill = sender)) + geom_histogram(stat="count")
-
-ggplot(dat, aes(x = month, fill = sender)) + geom_bar(position = 'dodge', stat="count")
-
-
-# Change x and y axis labels, and limits
-graf + scale_x_discrete(name ="Months", limits=c("Jul","Aug","Sep","Oct","Nov","Dec"))
-
-# Change x and y axis labels, and limits
-graf + scale_y_continuous(name="Count", limits=c(0, 400), breaks=c(0,50,100,150,200,250,300,350,400))
-
-ggplot(data=dat, aes(x=date, fill = sender, colour=sender)) +
-  geom_line() 
