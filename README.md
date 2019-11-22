@@ -34,7 +34,7 @@ library(lubridate)
    6. Get the final plot!
 
 **Example**
-![](example_plot\example_plot.gif)<!-- -->
+![](example_plot\example_plot.png)<!-- -->
 
 **Creator**
 
