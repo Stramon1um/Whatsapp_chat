@@ -3,7 +3,7 @@
 
 Thanks to this R script, it's possible to visualize in different kind of plots Whatsapp chat histories in few and very simple steps.
 
-**Steps:**
+#### Steps:
 
    1. Export the Whatsapp chat history directly from the phone app and transfer it on the pc. If the phone is in 24h time format, switch it in 12h just for this step (a separation between *am* and *pm* is needed for running the script).
 
@@ -21,7 +21,7 @@ date  | time  | morning | sender | *To delete  ->*
 
    5. Run the R script. The following packages are required:
 
-```
+``` r
 library(ggplot2)
 library(scales)
 library(gridExtra)
@@ -33,9 +33,11 @@ library(lubridate)
 
    6. Get the final plot!
 
-**Example**
-![](example_plot/example_plot.png)<!-- -->
 
-**Creator**
+#### Example
+![](example_plot/example_plot.png)
+
+
+#### Creator
 
 [Mauro Maver](https://github.com/stramon1um)
